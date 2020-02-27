@@ -1,49 +1,66 @@
-<?php 
-/* 
+<?php
+/*
  * Template Name: Homepage
  * Template Post Type: page
  */
-get_header(); ?>
+get_header();
 
-	<main role="main">
-		<!-- section -->
-		<section>
+$Second_featured_image = get_field('second_featured_image');
+$Third_featured_image = get_field('third_featured_image');
+$whoiam = get_field('whoiam');
+$whatido = get_field('WhatIDo');
+?>
 
+<header class="full hero" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+		<div class="text-box">
 			<h1><?php the_title(); ?></h1>
-			<img src="<?php echo get_template_directory_uri();?>/img/hashtag-hero-mobile.jpg" class="img-fluid" alt="Responsive image">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 				<?php the_content(); ?>
-
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
-
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
 		<?php endwhile; ?>
-
 		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
+			<h1>Hello World!</h1>
 		<?php endif; ?>
+		</div>
+</header>
 
-		</section>
-		<!-- /section -->
-	</main>
+<div class="wrapper">
+    <!-- Who am i section-->
+    <a name="Whoiam">
+	<?php if( $Second_featured_image ): ?>
+        <div class="row full info" style="background-image: url(<?php echo $Second_featured_image['url']; ?>);">
+	<?php endif; ?>
+            <div class="row justify-content-end">
+                <div class="col-sm-7 col-md-5 details-card">
+                    <h2>Who I Am</h2>
+                    <?php if( $whoiam ): ?>
+						<p><?php echo $whoiam; ?></p>
+					<?php endif; ?>
+                </div>
+            </div>
+			<!-- <a class="downarrow" href="#Whatido"></a> -->
+		</div>
+    </a>
+    <!-- What I do section-->
+    <a name="Whatido">
+	<?php if( $Third_featured_image ): ?>
+        <div class="row full info" style="background-image: url(<?php echo $Third_featured_image['url']; ?>);">
+	<?php endif; ?>
+            <div class="row justify-content-start">
+                <div class="col-sm-7 col-md-5 details-card">
+                    <h2>What I Do</h2>
+                    <?php if( $whatido ): ?>
+						<p><?php echo $whatido; ?></p>
+					<?php endif; ?>
+                </div>
+            </div>
+			<!-- <a class="downarrow" href="#Portfolio"></a> -->
+		</div>
+    </a>
+    <!--Portfolio Section   -->
+    <a name="Portfolio">
+        <div class="row full info"> </div>
+    </a>
+</div>
 
 
 <?php get_footer(); ?>

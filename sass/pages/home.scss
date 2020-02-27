@@ -1,3 +1,120 @@
+$primary:#B19146;
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+.full {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: gainsboro;
+  // erase the border
+  // border: 1px solid black;
+}
+header.hero {
+  padding-top: 25vh;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  &::after {
+    background-color: black;
+    opacity: 50%;
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+  }
+  h1, h2, h3 {
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+    margin: 0% auto 5%;
+    color: white;
+
+  }
+  .text-box {
+    position: relative;
+    top: 25%;
+    left: 0%;
+    z-index: 2;
+  }
+}
 h1 {
-  color: mediumaquamarine;
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+  color: $primary;
+}
+h3 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.5rem;
+}
+.wrapper {
+  .row.full.info{
+    margin: 0;
+    padding: 20vh 0px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &::after {
+      background-color: black;
+      opacity: 30%;
+      content: "";
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1;
+    }
+    .details-card {
+      background-color: white;
+      height: auto;
+      padding: 5%;
+      position: relative;
+      top: 0%;
+      left: 0%;
+      z-index: 2;
+      &.entry-animation{
+        animation: entry;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+      &.exit-animation{
+        animation: exit;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes entry{
+        0% {margin: 0vh -100vw;}
+        100% {margin: 0vh 0vw;}
+      }
+      @keyframes exit{
+        0% {margin: 0vh 0vw;}
+        100% {margin: 0vh -100vw;}
+      }
+    }
+    .downarrow {
+      position: absolute;
+      bottom: 0px;
+      left: 45%;
+      width: 100px;
+      border: 1px solid black;
+      border-radius: 50% 50% 0 0;
+      height: 100px;
+      background-image: url(https://www.freepngimg.com/thumb/web_design/24747-5-down-arrow-transparent-picture.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 80%;
+    }
+  }
 }

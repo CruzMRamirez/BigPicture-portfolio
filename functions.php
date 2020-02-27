@@ -87,6 +87,17 @@ function html5blank_nav()
 	);
 }
 
+function custom_menu() {
+	register_nav_menus(
+	  array(
+		'Custom-Header-Menu' => __( 'Custom Header Menu' )
+		// ,
+		// 'extra-menu' => __( 'Extra Menu' )
+	  )
+	);
+  }
+  add_action( 'init', 'custom_menu' );
+
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -102,10 +113,10 @@ function html5blank_header_scripts()
 
 		wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array('jquery'), '', true); // Popper.js
 		wp_enqueue_script('popper'); // Enqueue it!
-		
+
 		wp_register_script('bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array('jquery'), '', true); // Popper.js
 		wp_enqueue_script('bootstrapjs'); // Enqueue it!
-        
+
         wp_register_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('scripts'); // Enqueue it!
     }

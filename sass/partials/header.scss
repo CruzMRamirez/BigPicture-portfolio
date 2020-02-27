@@ -3,18 +3,16 @@
  * ---
  */
 
+nav {
+  ul {
+    li {
+      a {
+        margin: 0px .75vw;
+      }
+    }
+  }
+}
 
 // Header container
 .header {}
 
-// Logo
-.logo {
-  width: 35%;
-  max-width: 160px;
-  position: absolute;
-  z-index: 1;
-  top: 3%;
-  left: 7%;
-}
-
-.logo-img {}
