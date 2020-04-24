@@ -24,7 +24,7 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-	<nav class="navbar navbar-light bg-light sticky-top">
+	<nav class="navbar navbar-dark bg-dark fixed-top">
 		<a href="<?php echo home_url(); ?>" class="navbar-brand">Cruz Ramirez</a>
 		<?php
 			wp_nav_menu( array(

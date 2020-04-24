@@ -50,10 +50,63 @@ nav ul li a {
   margin: 0px 0.75vw;
 }
 
+nav.navbar {
+  opacity: 90%;
+  background-color: #2C2C2C !important;
+}
+nav.navbar a {
+  color: white;
+}
+nav.navbar .navbar-brand {
+  text-shadow: 4px 4px #B19146;
+  color: white;
+  font-size: 2rem;
+}
+
 /**
  * partials/footer
  * ---
  */
+.footer {
+  background-color: #39454B;
+  padding: 10px;
+  color: #797F83;
+}
+
+/**
+ * partials/menu
+ * ---
+ */
+.contact-full form {
+  padding: 10vh 0;
+}
+.contact-full form label, .contact-full form input, .contact-full form textarea {
+  width: 100%;
+  font-size: 24px;
+  color: #707070;
+}
+.contact-full form input, .contact-full form textarea {
+  border: 2px solid #707070;
+  border-radius: 13px;
+  padding: 8px;
+}
+.contact-full form input[type=submit] {
+  border: 1px solid #B19146;
+  color: #B19146;
+  background-color: white;
+  width: 20vw;
+  border-radius: 50px;
+}
+.contact-full form input[type=submit]:hover {
+  background-color: #B19146;
+  color: white;
+}
+
+@media only screen and (min-width: 960px) {
+  .contact-full.container {
+    max-width: 50vw;
+  }
+}
 body {
   width: 100%;
   overflow-x: hidden;
@@ -62,11 +115,16 @@ body {
 .full {
   min-height: 100vh;
   width: 100vw;
+  max-height: 100vh;
   background-color: gainsboro;
 }
 
+.row {
+  margin: 0px;
+}
+
 header.hero {
-  padding-top: 25vh;
+  padding-top: 30vh;
   text-align: center;
   background-position: center center;
   background-size: cover;
@@ -91,6 +149,19 @@ header.hero h1, header.hero h2, header.hero h3 {
   margin: 0% auto 5%;
   color: white;
 }
+header.hero h1 {
+  animation: heading;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes heading {
+  0% {
+    margin-top: -40vh;
+  }
+  100% {
+    margin-top: 0vh;
+  }
+}
 header.hero .text-box {
   position: relative;
   top: 25%;
@@ -99,11 +170,11 @@ header.hero .text-box {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #B19146;
 }
 
@@ -113,6 +184,10 @@ h3 {
 
 p {
   font-size: 1.5rem;
+}
+
+.parrallax {
+  background-attachment: fixed;
 }
 
 .wrapper .row.full.info {
@@ -177,10 +252,106 @@ p {
   border: 1px solid black;
   border-radius: 50% 50% 0 0;
   height: 100px;
-  background-image: url(https://www.freepngimg.com/thumb/web_design/24747-5-down-arrow-transparent-picture.png);
+  background-image: url("https://www.freepngimg.com/thumb/web_design/24747-5-down-arrow-transparent-picture.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 80%;
+}
+
+.official-home .full {
+  min-height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  background-color: gainsboro;
+}
+.official-home h1 {
+  font-size: 3rem;
+}
+.official-home h2 {
+  font-size: 2.5rem;
+  color: #B19146;
+}
+.official-home h3 {
+  font-size: 2rem;
+}
+.official-home p {
+  font-size: 1.5rem;
+}
+.official-home .hero {
+  background-color: teal;
+  color: #fff;
+  padding: 15px;
+  height: 90vh;
+  width: 100%;
+}
+.official-home .hero header {
+  height: 40vh;
+}
+.official-home .hero header h1 {
+  text-align: center;
+  position: relative;
+  animation: heading;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes heading {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: 30vh;
+  }
+}
+.official-home .hero h3 {
+  text-align: center;
+  width: 80%;
+  position: relative;
+  animation: text;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes text {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 0;
+  }
+}
+.official-home .content_row {
+  border: 1px solid black;
+}
+.official-home .card_row {
+  background-color: white;
+  color: black;
+  padding: 5%;
+}
+@media only screen and (min-width: 768px) {
+  .official-home body {
+    background-color: lightblue;
+  }
+  .official-home .content_row {
+    height: 100vh;
+    display: flex;
+  }
+  .official-home .parallax {
+    background-attachment: fixed;
+  }
+  .official-home .bg_row {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .official-home .bg_row img {
+    display: none;
+  }
+  .official-home .card_row {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

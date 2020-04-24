@@ -2,6 +2,11 @@
  * partials/footer
  * ---
  */
+$footer_bg_color: #39454B;
+$footer_color: #797F83;
 
-
-.footer {}
+.footer {
+  background-color: $footer_bg_color;
+  padding: 10px;
+  color: $footer_color;
+}

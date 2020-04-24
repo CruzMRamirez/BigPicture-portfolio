@@ -1,0 +1,37 @@
+/**
+ * partials/menu
+ * ---
+ */
+// start of css  for contact form
+$primary:#B19146;
+
+.contact-full form {
+  padding: 10vh 0;
+  label, input, textarea {
+    width: 100%;
+    font-size: 24px;
+    color: #707070;
+  }
+  input, textarea {
+    border: 2px solid #707070;
+    border-radius: 13px;
+    padding: 8px;
+  }
+  input[type=submit] {
+    border: 1px solid $primary;
+    color: $primary;
+    background-color: white;
+    width: 20vw;
+    border-radius: 50px;
+    &:hover {
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
+// end of css for contact form
+@media only screen and (min-width: 960px) {
+  .contact-full.container {
+    max-width: 50vw;
+  }
+}

@@ -16,3 +16,15 @@ nav {
 // Header container
 .header {}
 
+nav.navbar {
+  opacity: 90%;
+  background-color: #2C2C2C !important;
+  a {
+    color: white;
+  }
+  .navbar-brand {
+    text-shadow: 4px 4px #B19146;
+    color: white;
+    font-size: 2rem;
+  }
+}

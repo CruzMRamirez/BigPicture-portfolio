@@ -1,0 +1,92 @@
+$primary:#B19146;
+.official-home{
+  .full {
+    min-height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    background-color: gainsboro;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+    color: $primary;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  .hero {
+    background-color: teal;
+    color: #fff;
+    padding: 15px;
+    height: 90vh;
+    width: 100%;
+    header
+    {
+      height: 40vh;
+      h1 {
+        text-align: center;
+        position: relative;
+        animation: heading;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes heading {
+        0% {top: -50px;}
+        100% {top: 30vh;}
+      }
+    }
+    h3 {
+      text-align: center;
+      width: 80%;
+      position: relative;
+      animation: text;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes text {
+      0% { left: -50%;}
+      100% {left: 0;}
+    }
+  }
+.content_row {
+  border: 1px solid black;
+}
+.card_row {
+  background-color: white;
+  color: black;
+  padding: 5%;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+  .content_row {
+    height: 100vh;
+    display: flex;
+  }
+  .parallax {
+    background-attachment: fixed;
+  }
+  .bg_row {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    img {
+      display: none;
+    }
+  }
+  .card_row {
+    width: 50%;
+  }
+}
+
+}
